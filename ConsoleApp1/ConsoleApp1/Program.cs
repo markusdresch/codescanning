@@ -34,7 +34,7 @@ namespace ConsoleApp1
 
             // tempfile instead of randomfile
             var tempFileName = Path.GetTempFileName();
-
+            if (tempFileName == null) return;
 
             // command injection
             var p = new Process();
@@ -47,12 +47,12 @@ namespace ConsoleApp1
             var doc = new XmlDocument { XmlResolver = null };
             doc.Load("/config.xml");
             var results = doc.SelectNodes("/Config/Devices/Device[id='" + args[0] + "']");
-
+            if (results == null) return;
 
             // weak hash
             var hashProvider = new SHA1CryptoServiceProvider();
             var hash = hashProvider.ComputeHash(Encoding.UTF8.GetBytes(args[0]));
-
+            if (hash == null) return;
 
 
             // endless loop
