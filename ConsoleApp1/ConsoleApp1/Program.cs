@@ -50,7 +50,7 @@ namespace ConsoleApp1
             if (results == null) return;
 
             // weak hash
-            var hashProvider = new SHA1CryptoServiceProvider();
+            using var hashProvider = new SHA1CryptoServiceProvider();
             var hash = hashProvider.ComputeHash(Encoding.UTF8.GetBytes(args[0]));
             if (hash == null) return;
 
