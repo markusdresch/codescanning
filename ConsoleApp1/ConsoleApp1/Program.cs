@@ -18,7 +18,12 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var password = "abc";
+
+            if (password == "abc")
+            {
+                Console.WriteLine("Hello World!");
+            }
 
             // no server cert validation
             ServicePointManager.DefaultConnectionLimit = 100;
