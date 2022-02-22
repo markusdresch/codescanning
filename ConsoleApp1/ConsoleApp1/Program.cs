@@ -37,7 +37,7 @@ namespace ConsoleApp1
             if (tempFileName == null) return;
 
             // command injection
-            var p = new Process();
+            using var p = new Process();
             p.StartInfo.FileName = "exportLegacy.exe";
             p.StartInfo.Arguments = " -user " + args[0] + " -role user";
             p.Start();
