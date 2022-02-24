@@ -68,8 +68,8 @@ jobs:
     #   make bootstrap
     #   make release
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
+    #- name: Perform CodeQL Analysis
+    #  uses: github/codeql-action/analyze@v1
       
     #- name: DevSkim
     #  uses: microsoft/DevSkim-Action@v1.0.3
@@ -85,10 +85,14 @@ jobs:
         # Optional comma separated list of file globs to ignore when scanning.
         # ignore-globs: # optional, default is **/.git/**,**/bin/**
         
-    - name: SecurityCodeScan
+    #- name: SecurityCodeScan
       # You may pin to the exact commit or the version.
       # uses: security-code-scan/security-code-scan-results-action@cdb3d5e639054395e45bf401cba8688fcaf7a687
-      uses: security-code-scan/security-code-scan-results-action@v1.3
-      with:
+    #  uses: security-code-scan/security-code-scan-results-action@v1.3
+    #  with:
         # The output directory where SARIF files should be collected.
-        sarif_directory: ../sarif-results # optional, default is ../results
+    #    sarif_directory: ../sarif-results # optional, default is ../results
+    
+    - name: HCL AppScan CodeSweep
+      uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@v1
+
