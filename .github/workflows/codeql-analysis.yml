@@ -71,8 +71,8 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
       
-    - name: DevSkim
-      uses: microsoft/DevSkim-Action@v1.0.3
+    #- name: DevSkim
+    #  uses: microsoft/DevSkim-Action@v1.0.3
       #with:
         # The sub directory of the repository root to scan. Repository root used by default.
         # directory-to-scan: # optional, default is GITHUB_WORKSPACE
@@ -84,3 +84,8 @@ jobs:
         # output-directory: # optional, default is GITHUB_WORKSPACE
         # Optional comma separated list of file globs to ignore when scanning.
         # ignore-globs: # optional, default is **/.git/**,**/bin/**
+        
+    - name: SecurityCodeScan
+      # You may pin to the exact commit or the version.
+      # uses: security-code-scan/security-code-scan-results-action@cdb3d5e639054395e45bf401cba8688fcaf7a687
+      uses: security-code-scan/security-code-scan-results-action@v1.3
